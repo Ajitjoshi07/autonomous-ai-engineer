@@ -1,0 +1,46 @@
+# ── Core LLM & Agent Orchestration ──────────────────────────────────────────
+langgraph>=0.2.0
+langchain>=0.3.0
+langchain-openai>=0.2.0
+openai>=1.40.0
+
+# ── Layer 1: Code Understanding ──────────────────────────────────────────────
+tree-sitter>=0.23.0
+tree-sitter-python>=0.23.0
+faiss-cpu>=1.8.0
+transformers>=4.44.0
+torch>=2.4.0
+sentence-transformers>=3.0.0
+networkx>=3.3
+gitpython>=3.1.43
+chromadb>=0.5.0
+
+# ── Layer 3: Sandbox ─────────────────────────────────────────────────────────
+docker>=7.1.0
+
+# ── Layer 4: Patch Engine ────────────────────────────────────────────────────
+unidiff>=0.7.5
+
+# ── Layer 5: Test Execution ──────────────────────────────────────────────────
+pytest>=8.3.0
+pytest-json-report>=1.5.0
+
+# ── Layer 6: Code Quality ────────────────────────────────────────────────────
+ruff>=0.6.0
+
+# ── Layer 7: Memory ──────────────────────────────────────────────────────────
+# mem0ai>=0.1.0   # optional, can use custom FAISS store
+
+# ── GitHub Integration ───────────────────────────────────────────────────────
+PyGithub>=2.4.0
+
+# ── Utilities ────────────────────────────────────────────────────────────────
+pydantic>=2.8.0
+python-dotenv>=1.0.0
+rich>=13.8.0        # beautiful terminal output
+fastapi>=0.115.0    # observability dashboard (Phase 5)
+uvicorn>=0.30.0
+
+# ── Dev Tools ────────────────────────────────────────────────────────────────
+pytest-asyncio>=0.24.0
+black>=24.8.0
