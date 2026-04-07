@@ -38,7 +38,7 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], all
 
 # ── Dashboard HTML ─────────────────────────────────────────────────────────────
 
-DASHBOARD_HTML = """<!DOCTYPE html>
+DASHBOARD_HTML = r"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -703,9 +703,9 @@ function renderLogs(tasks) {
     else if (line.includes('FAILED') || line.includes('✗') || line.includes('ERROR')) cls = 'log-error';
     else if (line.includes('⚠') || line.includes('WARN')) cls = 'log-warn';
 
-    const timeMatch = line.match(/\[(\d{2}:\d{2}:\d{2})\]/);
+    const timeMatch = line.match(/[[](\d\d:\d\d:\d\d)[]]/);
     const time = timeMatch ? `<span class="log-time">[${timeMatch[1]}]</span> ` : '';
-    const msg  = line.replace(/\[\d{2}:\d{2}:\d{2}\]\s*/, '');
+    const msg  = line.replace(/[[]\d{2}:\d{2}:\d{2}[]]\s*/, '');
     return `<span class="log-line">${time}<span class="${cls}">${msg}</span></span>`;
   }).join('\n');
 
